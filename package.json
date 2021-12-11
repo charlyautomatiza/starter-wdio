@@ -1,0 +1,42 @@
+{
+    "name": "starter-wdio",
+    "version": "1.0.0",
+    "description": "UI Test automation framework based on WebdriverIO",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "clean": "rimraf .tsbuid && rimraf allure-results && rimraf junit-results",
+        "wdio": "npm run clean && wdio run wdio.conf.ts"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/charlyautomatiza/https-github.com-charlyautomatiza-starter-wdio.git"
+    },
+    "keywords": [
+        "wdio",
+        "cucumber",
+        "gherkin",
+        "typescript"
+    ],
+    "author": "Charly Automatiza",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/charlyautomatiza/https-github.com-charlyautomatiza-starter-wdio/issues"
+    },
+    "homepage": "https://github.com/charlyautomatiza/https-github.com-charlyautomatiza-starter-wdio#readme",
+    "devDependencies": {
+        "@wdio/allure-reporter": "^7.16.11",
+        "@wdio/cli": "^7.16.11",
+        "@wdio/cucumber-framework": "^7.16.11",
+        "@wdio/junit-reporter": "^7.16.11",
+        "@wdio/local-runner": "^7.16.11",
+        "@wdio/spec-reporter": "^7.16.11",
+        "chromedriver": "^96.0.0",
+        "ts-node": "^10.4.0",
+        "typescript": "^4.5.3",
+        "wdio-chromedriver-service": "^7.2.2"
+    },
+    "dependencies": {
+        "rimraf": "^3.0.2"
+    }
+}
