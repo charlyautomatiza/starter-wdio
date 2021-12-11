@@ -1,18 +1,26 @@
-*** UI Test Automation Charly Automatiza ***
+# UI Test Automation - WebDriverIO
+## Starter project creado en vivo en [stream de Twitch](https://www.twitch.tv/charlyautomatiza)
 
-Requerimientos
+### Requerimientos
 
-Node.js
-WebdriverIO
+- Instalar [Node.js](https://nodejs.org/es/download/)
+- Instalar algún cliente git como por ejemplo [git bash](https://git-scm.com/downloads) 
+- Tener instalado Chrome 96 (No Chromium)
 
-Instalación
+### Instalación
 
-npm install
+**Clonar el repositorio:**
 
-Para ejecutar el asistente de configuración:
+    git clone https://github.com/charlyautomatiza/starter-wdio.git
 
-npm init wdio .
+**Instalar las dependencias.**
 
-Para la ejecución de los test
+    npm install
 
-npm run wdio
+**Para la ejecución de los test**
+
+    npm run wdio
+
+**Para ejecutar el asistente de configuración (opcional para usar otros browsers o servicios):**
+
+    npm init wdio .
