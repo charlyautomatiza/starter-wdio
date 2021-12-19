@@ -1,5 +1,8 @@
 {
     "compilerOptions": {
+        "outDir": "./.tsbuild/",
+        "esModuleInterop": true,
+        "resolveJsonModule": true,
         "types": [
             "node",
             "webdriverio/async",
