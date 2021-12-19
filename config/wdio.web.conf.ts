@@ -21,7 +21,7 @@ export const config: WebdriverIO.Config = {
     // will be called from there.
     //
     specs: [
-        './features/**/*.feature'
+        './web/features/**/*.feature'
     ],
     // Patterns to exclude.
     exclude: [
@@ -132,14 +132,25 @@ export const config: WebdriverIO.Config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec','junit',['allure', {outputDir: 'allure-results'}]],
+    reporters: [
+        'spec',
+        ['junit', {
+            outputDir: 'junit-results',
+            outputFileFormat: (options: { cid: string; capabilities: any; }): string =>  {
+                return `results-${options.cid}.${options.capabilities.browserName}.xml`
+            },
+        }],
+        ['allure', {
+            outputDir: 'allure-results'
+        }]
+    ],
 
 
     //
     // If you are using Cucumber you need to specify the location of your step definitions.
     cucumberOpts: {
         // <string[]> (file/dir) require files before executing features
-        require: ['./features/step-definitions/steps.ts'],
+        require: ['./web/features/step-definitions/steps.ts'],
         // <boolean> show full backtrace for errors
         backtrace: false,
         // <string[]> ("extension:module") require files with the given EXTENSION after requiring MODULE (repeatable)
