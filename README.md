@@ -5,7 +5,7 @@
 </p>
 
 # UI Test Automation - WebDriverIO
-## Starter project creado en vivo en [stream de Twitch](https://www.twitch.tv/charlyautomatiza) basado en [WebDriverIO](https://webdriver.io/), [Appium](http://appium.io/), [Cucumber](https://cucumber.io/), [TypeScript](https://www.typescriptlang.org/) y [Allure Report](https://docs.qameta.io/allure-report/).
+## Starter project creado en vivo en [stream de Twitch](https://www.twitch.tv/charlyautomatiza) basado en [WebDriverIO](https://webdriver.io/), [Appium](http://appium.io/), [Cucumber](https://cucumber.io/), [TypeScript](https://www.typescriptlang.org/), [Allure Report](https://docs.qameta.io/allure-report/), con soporte multi-browser mediante [Docker](https://www.docker.com/) y [Selenium Grid](https://github.com/SeleniumHQ/docker-selenium).
 
 ### Requerimientos generales
 
@@ -56,6 +56,61 @@ Descargar e instalar
         - curl https://github.com/webdriverio/native-demo-app/releases/download/v0.4.0/Android-NativeDemoApp-0.4.0.apk --output Android-NativeDemoApp-0.4.0.apk
     - Para que el ejemplo funcione la apk debe estar dentro de la carpeta **/app** en la base de nuestro proyecto con el nombre configurado en la capability **app** del archivo [*config/wdio.mobile.conf.ts*](config/wdio.mobile.conf.ts).
 
+### Requerimientos docker
+
+Descargar e instalar
+
+- [Docker Desktop](https://www.docker.com/products/docker-desktop)
+    - Crearse una cuenta gratuita.
+
+Para levantar una imagen de Selenium Grid con múltiples browsers:
+
+Desde una terminal ejecutar:
+
+```bash
+# Network
+docker network create grid
+```
+
+```bash
+# Hub
+docker run -d -p 4442-4444:4442-4444 --net grid --name selenium-hub selenium/hub:4.1.1-20211217
+```
+
+```bash
+# Relacionamos los nodos con el hub
+# Nodo con Chrome
+docker run -d --net grid -e SE_EVENT_BUS_HOST=selenium-hub \
+    --shm-size="2g" \
+    -e SE_EVENT_BUS_PUBLISH_PORT=4442 \
+    -e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 \
+    -e SE_NODE_MAX_SESSIONS=2 \
+    -e SE_NODE_OVERRIDE_MAX_SESSIONS=true \
+    selenium/node-chrome:4.1.1-20211217
+```
+
+```bash
+# Nodo con Edge
+docker run -d --net grid -e SE_EVENT_BUS_HOST=selenium-hub \
+    --shm-size="2g" \
+    -e SE_EVENT_BUS_PUBLISH_PORT=4442 \
+    -e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 \
+    -e SE_NODE_MAX_SESSIONS=2 \
+    -e SE_NODE_OVERRIDE_MAX_SESSIONS=true \
+    selenium/node-edge:4.1.1-20211217
+```
+
+```bash
+# Nodo con Firefox
+docker run -d --net grid -e SE_EVENT_BUS_HOST=selenium-hub \
+    --shm-size="2g" \
+    -e SE_EVENT_BUS_PUBLISH_PORT=4442 \
+    -e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 \
+    -e SE_NODE_MAX_SESSIONS=2 \
+    -e SE_NODE_OVERRIDE_MAX_SESSIONS=true \
+    selenium/node-firefox:4.1.1-20211217
+```
+
 ### Instalación del framework de pruebas
 
 **Clonar el repositorio:**
@@ -69,6 +124,10 @@ Descargar e instalar
 **Para la ejecución de los test de web**
 
     npm run wdio-web
+
+**Para la ejecución de los test de web usando docker**
+
+    npm run wdio-web-docker
 
 **Para la ejecución de los test de mobile**
 
