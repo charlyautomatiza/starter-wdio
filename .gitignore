@@ -4,3 +4,4 @@ allure-results
 junit-results
 allure-report
 .tsbuild
+target
