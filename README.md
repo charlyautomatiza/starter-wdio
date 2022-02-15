@@ -1,6 +1,10 @@
-# [![WebdriverIO](https://webdriver.io/assets/images/robot-3677788dd63849c56aa5cb3f332b12d5.svg "https://webdriver.io")](https://webdriver.io)
+<p align="center">
+    <a href="https://webdriver.io/">
+        <img alt="WebdriverIO" src="https://webdriver.io/assets/images/robot-3677788dd63849c56aa5cb3f332b12d5.svg" width="146">
+    </a>
+</p>
 
-## Starter project creado en vivo en [stream de Twitch](https://www.twitch.tv/charlyautomatiza) basado en [WebDriverIO](https://webdriver.io/), [Appium](http://appium.io/), [Cucumber](https://cucumber.io/), [TypeScript](https://www.typescriptlang.org/), [Allure Report](https://docs.qameta.io/allure-report/), con soporte multi-browser mediante [Docker](https://www.docker.com/) y [Selenium Grid](https://github.com/SeleniumHQ/docker-selenium)
+## Starter project creado en vivo en [stream de Twitch](https://www.twitch.tv/charlyautomatiza) basado en [WebDriverIO](https://webdriver.io/), [Appium](http://appium.io/), [Cucumber](https://cucumber.io/), [TypeScript](https://www.typescriptlang.org/), [Allure Report](https://docs.qameta.io/allure-report/), [Node.js](https://nodejs.org/en/) con soporte multi-browser mediante [Docker](https://www.docker.com/) y [Selenium Grid](https://github.com/SeleniumHQ/docker-selenium)
 
 ### Requerimientos generales
 
