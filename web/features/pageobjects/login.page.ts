@@ -1,5 +1,3 @@
-import { ChainablePromiseElement } from 'webdriverio';
-
 import Page from './page';
 
 /**
@@ -9,15 +7,15 @@ class LoginPage extends Page {
     /**
      * define selectors using getter methods
      */
-    public get inputUsername(): ChainablePromiseElement<Promise<WebdriverIO.Element>> {
+    public get inputUsername() {
         return $('#username');
     }
 
-    public get inputPassword(): ChainablePromiseElement<Promise<WebdriverIO.Element>> {
+    public get inputPassword() {
         return $('#password');
     }
 
-    public get btnSubmit(): ChainablePromiseElement<Promise<WebdriverIO.Element>> {
+    public get btnSubmit() {
         return $('button[type="submit"]');
     }
 

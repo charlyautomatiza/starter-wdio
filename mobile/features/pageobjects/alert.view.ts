@@ -8,7 +8,7 @@ class AlertWiew {
     /**
      * define selectors using getter methods
      */
-    public get messageAlert(): ChainablePromiseElement<Promise<WebdriverIO.Element>> {
+    public get messageAlert() {
         return $('//*[@resource-id="android:id/message"]');
     }
 }
