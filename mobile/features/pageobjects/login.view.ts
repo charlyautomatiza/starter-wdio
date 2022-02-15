@@ -1,6 +1,3 @@
-import { ChainablePromiseElement } from 'webdriverio';
-
-
 /**
  * sub page containing specific selectors and methods for a specific page
  */
@@ -8,19 +5,19 @@ class LoginPage {
     /**
      * define selectors using getter methods
      */
-    public get inputUsername(): ChainablePromiseElement<Promise<WebdriverIO.Element>> {
+    public get inputUsername() {
         return $('//android.widget.EditText[@content-desc="input-email"]');
     }
 
-    public get inputPassword(): ChainablePromiseElement<Promise<WebdriverIO.Element>> {
+    public get inputPassword() {
         return $('//android.widget.EditText[@content-desc="input-password"]');
     }
 
-    public get btnSubmit(): ChainablePromiseElement<Promise<WebdriverIO.Element>> {
+    public get btnSubmit() {
         return $('//android.view.ViewGroup[@content-desc="button-LOGIN"]/android.view.ViewGroup');
     }
 
-    public get btnLogin(): ChainablePromiseElement<Promise<WebdriverIO.Element>> {
+    public get btnLogin() {
         return $('//android.widget.Button[@content-desc="Login"]/android.widget.TextView');
     }
 
