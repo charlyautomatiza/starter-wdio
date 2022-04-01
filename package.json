@@ -8,8 +8,10 @@
         "clean": "rimraf .tsbuid && rimraf allure-results && rimraf allure-report && rimraf junit-results",
         "clean-report": "allure generate --clean ./allure-results",
         "open-report": "npm run clean-report && allure open",
+        "report": "npm run clean-report && npm run open-report",
         "wdio": "wdio run wdio.conf.js",
         "wdio-web": "npm run clean && npx tsc && npx wdio run ./config/wdio.web.conf.ts",
+        "wdio-web-sh": "npm run clean && npx tsc && npx wdio run ./config/wdio.web.selectorshub.conf.ts",
         "wdio-web-docker": "npm run clean && npx tsc && npx wdio run ./config/wdio.docker.conf.ts",
         "wdio-mobile": "npm run clean && npx tsc && npx wdio run ./config/wdio.mobile.conf.ts"
     },
@@ -21,7 +23,8 @@
         "wdio",
         "cucumber",
         "gherkin",
-        "typescript"
+        "typescript",
+        "selectorshub"
     ],
     "author": "Charly Automatiza",
     "license": "ISC",

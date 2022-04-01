@@ -130,6 +130,17 @@ npm install
     npm run wdio-web
 ```
 
+#### **Para la ejecución de los test de web del challenge de SelectorsHub**
+
+```bash
+    npm run wdio-web-sh
+```
+
+- **Ejercicios**:
+  - **Ejercicio 1**: Login Section, "Invalid element state"
+  - **Ejercicio 2**: FirstName and LastName, "Element is not currently interactuable".
+  - **Ejercicio 3**: Food Section, "iFrame + Shadow Root".
+
 #### **Para la ejecución de los test de web usando docker**
 
 ```bash
