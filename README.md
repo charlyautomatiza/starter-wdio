@@ -1,4 +1,12 @@
 <p align="center">
+  <a href="https://www.twitch.tv/charlyautomatiza"><img alt="Twitch" src="https://img.shields.io/badge/CharlyAutomatiza-Twitch-9146FF.svg" style="max-height: 300px;"></a>
+  <a href="https://discord.gg/wwM9GwxmRZ"><img alt="Discord" src="https://img.shields.io/discord/944608800361570315" style="max-height: 300px;"></a>
+  <a href="http://twitter.com/char_automatiza"><img src="https://img.shields.io/badge/@char__automatiza-Twitter-1DA1F2.svg?style=flat" style="max-height: 300px;"></a>
+  <a href="https://www.youtube.com/channel/UCwEb6xrQtQCEuN_gNgi_Xfg?sub_confirmation=1"><img src="https://img.shields.io/badge/Charly%20Automatiza-Youtube-FF0000.svg" style="max-height: 300px;" style="max-height: 300px;"></a>
+  <a href="https://www.linkedin.com/in/gautocarlos/"><img src="https://img.shields.io/badge/Carlos%20 Gauto-LinkedIn-0077B5.svg" style="max-height: 300px;" style="max-height: 300px;"></a>
+</p>
+
+<p align="center">
     <a href="https://webdriver.io/">
         <img alt="WebdriverIO" src="https://webdriver.io/assets/images/robot-3677788dd63849c56aa5cb3f332b12d5.svg" width="146">
     </a>
@@ -10,7 +18,7 @@
 
 - Instalar [Node.js](https://nodejs.org/es/download/)
 - Instalar algún cliente git como por ejemplo [git bash](https://git-scm.com/downloads)
-- Tener instalado Chrome 96 (No Chromium)
+- Tener instalado Chrome 100 (No Chromium)
 
 ### Requerimientos mobile
 
@@ -73,7 +81,7 @@ docker network create grid
 
 ```bash
 # Hub
-docker run -d -p 4442-4444:4442-4444 --net grid --name selenium-hub selenium/hub:4.1.1-20211217
+docker run -d -p 4442-4444:4442-4444 --net grid --name selenium-hub selenium/hub:4.1.3-20220405
 ```
 
 ```bash
@@ -85,7 +93,7 @@ docker run -d --net grid -e SE_EVENT_BUS_HOST=selenium-hub \
     -e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 \
     -e SE_NODE_MAX_SESSIONS=2 \
     -e SE_NODE_OVERRIDE_MAX_SESSIONS=true \
-    selenium/node-chrome:4.1.1-20211217
+    selenium/node-chrome:100.0-20220405
 ```
 
 ```bash
@@ -96,7 +104,7 @@ docker run -d --net grid -e SE_EVENT_BUS_HOST=selenium-hub \
     -e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 \
     -e SE_NODE_MAX_SESSIONS=2 \
     -e SE_NODE_OVERRIDE_MAX_SESSIONS=true \
-    selenium/node-edge:4.1.1-20211217
+    selenium/node-edge:100.0-20220405
 ```
 
 ```bash
@@ -107,7 +115,7 @@ docker run -d --net grid -e SE_EVENT_BUS_HOST=selenium-hub \
     -e SE_EVENT_BUS_SUBSCRIBE_PORT=4443 \
     -e SE_NODE_MAX_SESSIONS=2 \
     -e SE_NODE_OVERRIDE_MAX_SESSIONS=true \
-    selenium/node-firefox:4.1.1-20211217
+    selenium/node-firefox:99.0-20220405
 ```
 
 ### Instalación del framework de pruebas
