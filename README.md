@@ -135,29 +135,29 @@ npm install
 #### **Para la ejecución de los test de web**
 
 ```bash
-    npm run wdio-web
+npm run wdio-web
 ```
 
 #### **Para la ejecución de los test de web usando docker**
 
 ```bash
-    npm run wdio-web-docker
+npm run wdio-web-docker
 ```
 
 #### **Para la ejecución de los test de mobile**
 
 ```bash
-    npm run wdio-mobile
+npm run wdio-mobile
 ```
 
 #### **Para ejecutar el asistente de configuración (opcional para usar otros browsers o servicios):**
 
 ```bash
-    npm init wdio .
+npm init wdio .
 ```
 
 #### **Para crear y abrir el reporte unificado de los resultados de los test**
 
 ```bash
-    npm run open-report
+npm run report
 ```
