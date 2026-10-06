@@ -7,7 +7,7 @@ const pages = {
     login: LoginPage
 }
 
-Given(/^I am on the (\w+) page$/, async (page) => {
+Given(/^I am on the (\w+) page$/, async (page: keyof typeof pages) => {
     await pages[page].open()
 });
 
@@ -17,5 +17,5 @@ When(/^I login with (.*) and (.*)$/, async (username, password) => {
 
 Then(/^I should see a flash message saying (.*)$/, async (message) => {
     await expect(SecurePage.flashAlert).toBeExisting();
-    await expect(SecurePage.flashAlert).toHaveTextContaining(message);
+    await expect(await SecurePage.flashAlert.getText()).toContain(message);
 });

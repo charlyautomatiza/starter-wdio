@@ -8,15 +8,15 @@ class LoginPage extends Page {
     /**
      * define selectors using getter methods
      */
-    public get inputUsername(): ChainablePromiseElement<WebdriverIO.Element> {
+    public get inputUsername(): ChainablePromiseElement {
         return $('#username');
     }
 
-    public get inputPassword(): ChainablePromiseElement<WebdriverIO.Element> {
+    public get inputPassword(): ChainablePromiseElement {
         return $('#password');
     }
 
-    public get btnSubmit(): ChainablePromiseElement<WebdriverIO.Element> {
+    public get btnSubmit(): ChainablePromiseElement {
         return $('button[type="submit"]');
     }
 
@@ -33,7 +33,7 @@ class LoginPage extends Page {
     /**
      * overwrite specific options to adapt it to page object
      */
-    public open(): Promise<string> {
+    public open() {
         return super.open('login');
     }
 }
