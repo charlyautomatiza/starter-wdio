@@ -7,19 +7,19 @@ class LoginPage {
     /**
      * define selectors using getter methods
      */
-    public get inputUsername(): ChainablePromiseElement<WebdriverIO.Element> {
+    public get inputUsername(): ChainablePromiseElement {
         return $('//android.widget.EditText[@content-desc="input-email"]');
     }
 
-    public get inputPassword(): ChainablePromiseElement<WebdriverIO.Element> {
+    public get inputPassword(): ChainablePromiseElement {
         return $('//android.widget.EditText[@content-desc="input-password"]');
     }
 
-    public get btnSubmit(): ChainablePromiseElement<WebdriverIO.Element> {
+    public get btnSubmit(): ChainablePromiseElement {
         return $('//android.view.ViewGroup[@content-desc="button-LOGIN"]/android.view.ViewGroup');
     }
 
-    public get btnLogin(): ChainablePromiseElement<WebdriverIO.Element> {
+    public get btnLogin(): ChainablePromiseElement {
         return $('//android.widget.Button[@content-desc="Login"]/android.widget.TextView');
     }
 

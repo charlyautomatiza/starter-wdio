@@ -8,7 +8,7 @@ class SecurePage extends Page {
     /**
      * define selectors using getter methods
      */
-    public get flashAlert(): ChainablePromiseElement<WebdriverIO.Element> {
+    public get flashAlert(): ChainablePromiseElement {
         return $('#flash');
     }
 }

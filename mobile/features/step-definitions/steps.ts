@@ -13,6 +13,5 @@ When(/^I login with (.*) and (.*)$/, async (username, password) => {
 
 Then(/^I should see a flash message saying (.*)$/, async (message) => {
     await expect(AlertWiew.messageAlert).toBeExisting();
-    await expect(AlertWiew.messageAlert).toHaveTextContaining(message);
+    await expect(AlertWiew.messageAlert).toHaveText(expect.stringContaining(message));
 });
-
