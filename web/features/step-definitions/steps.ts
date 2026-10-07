@@ -17,5 +17,5 @@ When(/^I login with (.*) and (.*)$/, async (username, password) => {
 
 Then(/^I should see a flash message saying (.*)$/, async (message) => {
     await expect(SecurePage.flashAlert).toBeExisting();
-    await expect(await SecurePage.flashAlert.getText()).toContain(message);
+    await expect(SecurePage.flashAlert).toHaveText(expect.stringContaining(message));
 });
